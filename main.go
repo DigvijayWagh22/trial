@@ -23,9 +23,9 @@ func main() {
 			switch ev := e.(type) {
 			case *kafka.Message:
 				if ev.TopicPartition.Error != nil {
-					fmt.Printf("Delivery failed: %v\n", ev.TopicPartition)
+					fmt.Printf("Delivery failed by me: %v\n", ev.TopicPartition)
 				} else {
-					fmt.Printf("Delivered message to %v\n", ev.TopicPartition)
+					fmt.Printf("Delivered message to you %v\n", ev.TopicPartition)
 				}
 			}
 		}
